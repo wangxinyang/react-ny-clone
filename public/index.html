@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      ;/(iPhone|iPad|iPhone OS|Phone|iPod|iOS)/i.test(navigator.userAgent) &&
+        ((head = document.getElementsByTagName('head')),
+        (viewport = document.createElement('meta')),
+        (viewport.name = 'viewport'),
+        (viewport.content = 'target-densitydpi=device-dpi, width=480px, user-scalable=no'),
+        head.length > 0 && head[head.length - 1].appendChild(viewport))
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
