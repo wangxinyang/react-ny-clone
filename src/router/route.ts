@@ -17,6 +17,33 @@ export interface IRoute {
   routes?: IRoute[]
 }
 
+const menus = [
+  {
+    path: '/',
+    name: '发现音乐',
+  },
+  {
+    path: '/my',
+    name: '我的音乐',
+  },
+  {
+    path: '/friend',
+    name: '朋友',
+  },
+  {
+    path: '/friend',
+    name: '商城',
+  },
+  {
+    path: '/friend',
+    name: '音乐人',
+  },
+  {
+    path: '/download',
+    name: '下载客户端',
+  },
+]
+
 const routes = [
   {
     path: '/',
@@ -73,4 +100,4 @@ const routes = [
 
 export default routes
 
-export { NestedRoute }
+export { menus, NestedRoute }

@@ -71,6 +71,7 @@
     "@types/react-router-dom": "^5.1.7",
     "axios": "^0.21.1",
     "lib-flexible": "^0.3.2",
+    "normalize.css": "^8.0.1",
     "postcss-px2rem": "^0.3.0",
     "qs": "^6.9.6",
     "react": "^17.0.1",

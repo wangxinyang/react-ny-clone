@@ -70,7 +70,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: getCssLoaders(1),
-        exclude: /node_modules/,
       },
       {
         test: /\.less$/,
