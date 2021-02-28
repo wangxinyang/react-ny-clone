@@ -15,5 +15,14 @@ module.exports = merge(base, {
     open: true, // 打开默认浏览器
     hot: true, // 热更新
     historyApiFallback: true, // 地址栏访问指定路由时出现了404需要配置
+    proxy: {
+      '/ny': {
+        target: 'http://123.57.176.198:3000/',
+        pathRewrite: { '^/ny': '' },
+        changeOrigin: true, // target是域名的话，需要这个参数，
+        secure: true, // 设置支持https协议的代理
+        cookieDomainRewrite: 'http://123.57.176.198:3000/',
+      },
+    },
   },
 })
