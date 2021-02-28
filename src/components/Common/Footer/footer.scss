@@ -1,0 +1,136 @@
+$bground-img: url('/src/assets/images/foot1.png') no-repeat;
+$bground-tt: url('/src/assets/images/foot2.png') no-repeat;
+
+.footer_wrapper {
+  background-color: #f2f2f2;
+  border-top: 1px solid #d3d3d3;
+
+  .m_footer_center {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    .footer_left {
+      width: 520px;
+
+      .item {
+        color: #999;
+      }
+
+      .line {
+        margin: 0 8px 0 10px;
+        color: #c2c2c2;
+      }
+
+      .s-fc3 {
+        color: #666;
+      }
+    }
+
+    .footer_right {
+      width: 420px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .unit {
+        color: #666;
+        width: 60px;
+        height: 70px;
+        margin-right: 30px;
+
+        .logo {
+          margin: 0 auto;
+          width: 50px;
+          height: 45px;
+        }
+
+        .tt {
+          width: 72px;
+          height: 14px;
+          margin: 5px 5px 0;
+        }
+
+        .studio_logo {
+          display: block;
+          background: $bground-img;
+          background-position: -63px -456.5px;
+          background-size: 110px 552px;
+        }
+
+        .studio_words {
+          background: $bground-tt;
+          background-position: 0 -108px;
+          background-size: 180px 139px;
+        }
+
+        .auth_logo {
+          display: block;
+          background: $bground-img;
+          background-position: -63px -101px;
+          background-size: 110px 552px;
+        }
+
+        .auth_words {
+          background: $bground-tt;
+          background-position: -1px -91px;
+          background-size: 180px 139px;
+        }
+
+        .musician_logo {
+          display: block;
+          background: $bground-img;
+          background-position: 0 0;
+          background-size: 110px 552px;
+        }
+
+        .musician_words {
+          background: $bground-tt;
+          background-position: 0 0;
+          background-size: 180px 139px;
+        }
+
+        .reward_logo {
+          display: block;
+          background: $bground-img;
+          background-position: -60px -50px;
+          background-size: 110px 552px;
+        }
+
+        .reward_words {
+          background: $bground-tt;
+          background-position: 0 -54px;
+          background-size: 180px 139px;
+        }
+
+        .cash_logo {
+          display: block;
+          background: $bground-img;
+          background-position: 0 -101px;
+          background-size: 110px 552px;
+        }
+
+        .cash_words {
+          background: $bground-tt;
+          background-position: -1px -72px;
+          background-size: 180px 139px;
+        }
+      }
+    }
+  }
+}
+
+.alink {
+  text-decoration: none;
+  color: #333;
+}
+
+.police-logo {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url('/src/assets/images/police.png') no-repeat;
+  background-size: cover;
+  margin-right: 2px;
+  vertical-align: -2px;
+}

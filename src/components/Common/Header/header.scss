@@ -1,3 +1,5 @@
+$bground: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
+
 .m_top {
   width: 100vw;
   height: 70px;
@@ -10,7 +12,7 @@
     align-items: center;
 
     .logo {
-      background: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
+      background: $bground;
       background-position: 0 0;
       width: 157px;
       height: 69px;
@@ -41,7 +43,7 @@
       }
 
       .nav_hot {
-        background: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
+        background: $bground;
         background-position: -190px 0;
         width: 28px;
         height: 19px;
@@ -62,7 +64,7 @@
         border-radius: 20px;
 
         .search_logo {
-          background: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
+          background: $bground;
           background-position: 0 -99px;
 
           input {
