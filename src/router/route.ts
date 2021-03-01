@@ -31,11 +31,11 @@ const menus = [
     name: '朋友',
   },
   {
-    path: '/friend',
+    path: '/',
     name: '商城',
   },
   {
-    path: '/friend',
+    path: '/',
     name: '音乐人',
   },
   {
@@ -52,34 +52,36 @@ const routes = [
     exact: true,
   },
   {
-    path: '/recommend',
+    path: '/discover',
     name: '推荐',
     component: Recommend,
-  },
-  {
-    path: '/toplist',
-    name: '排行榜',
-    component: TopList,
-  },
-  {
-    path: '/playlist',
-    name: '歌单',
-    component: Playlist,
-  },
-  {
-    path: '/djradio',
-    name: '主播电台',
-    component: Djradio,
-  },
-  {
-    path: '/artist',
-    name: '歌手',
-    component: Artist,
-  },
-  {
-    path: '/album',
-    name: '新碟上架',
-    component: Album,
+    routes: [
+      {
+        path: '/discover/toplist',
+        name: '排行榜',
+        component: TopList,
+      },
+      {
+        path: '/discover/playlist',
+        name: '歌单',
+        component: Playlist,
+      },
+      {
+        path: '/discover/djradio',
+        name: '主播电台',
+        component: Djradio,
+      },
+      {
+        path: '/discover/artist',
+        name: '歌手',
+        component: Artist,
+      },
+      {
+        path: '/discover/album',
+        name: '新碟上架',
+        component: Album,
+      },
+    ],
   },
   {
     path: '/my',

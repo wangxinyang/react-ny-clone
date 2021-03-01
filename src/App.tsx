@@ -14,7 +14,7 @@ const App = () => {
             <NestedRoute key={i} {...route} />
           ))}
           <Route component={NoMatch} />
-          <Redirect from='/' to='/recommend' />
+          <Redirect from='/' to='/discover' />
         </Switch>
       </BrowserRouter>
       <Footer />
