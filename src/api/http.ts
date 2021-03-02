@@ -12,7 +12,7 @@ const http = axios.create({
 http.interceptors.response.use(
   // 响应拦截
   (res) => {
-    return res.data
+    return res
   },
   (err) => {
     if (err && err.response) {
