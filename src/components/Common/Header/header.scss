@@ -29,26 +29,12 @@ $bground: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
       display: flex;
       justify-content: space-between;
 
-      .nav_menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        a {
-          display: inline-block;
-          color: #ccc;
-          line-height: 70px;
-          margin: 0 20px;
-          font-size: 14px;
-        }
-      }
-
       .nav_hot {
         background: $bground;
         background-position: -190px 0;
         width: 28px;
         height: 19px;
-        margin: 20px 50px 0 -10px;
+        margin: 20px 50px 0 0;
       }
     }
 

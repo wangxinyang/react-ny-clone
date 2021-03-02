@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { ISubNavs } from 'src/router/route'
+import { INav } from 'src/router/route'
 import './subNavItem.scss'
 
 interface IProps {
-  item: ISubNavs
+  item: INav
   changeSelected(id: number): void
 }
 

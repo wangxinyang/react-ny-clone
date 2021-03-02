@@ -1,5 +1,5 @@
 const MyMusic = () => {
-  return <div>我的音乐</div>
+  return <div className='no_nav'></div>
 }
 
 export default MyMusic

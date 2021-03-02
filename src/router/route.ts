@@ -17,7 +17,7 @@ export interface IRoute {
   routes?: IRoute[]
 }
 
-export interface ISubNavs {
+export interface INav {
   id: number
   path: string
   name: string
@@ -29,6 +29,7 @@ const menus = [
     id: 1,
     path: '/',
     name: '发现音乐',
+    isSelected: true,
   },
   {
     id: 2,

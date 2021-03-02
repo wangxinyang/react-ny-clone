@@ -7,8 +7,8 @@ import NoMatch from './components/NoMatch/noMatch'
 const App = () => {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Switch>
           {routes.map((route: IRoute, i) => (
             <NestedRoute key={i} {...route} />

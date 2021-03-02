@@ -1,0 +1,40 @@
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  a {
+    display: inline-block;
+    color: #ccc;
+    line-height: 70px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  a.z-slt {
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a:hover {
+    background-color: #000;
+    text-decoration: none;
+    width: 100%;
+    color: #fff;
+  }
+
+  .menu_point {
+    position: absolute;
+    display: block;
+    background: url('/src/assets/images/topbar.png') no-repeat 0 9999px;
+    background-position: -105px -70px;
+    background-size: 120px auto;
+    width: 12px;
+    height: 7px;
+    top: 64px;
+    left: 50%;
+    margin-left: -6px;
+  }
+}

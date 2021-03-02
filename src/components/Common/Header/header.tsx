@@ -1,7 +1,17 @@
 import { menus } from 'src/router/route'
+import { useCallback, useState } from 'react'
+import MenuItem from './menuItem'
 import './header.scss'
 
 const Header = () => {
+  const [menuList, setMenuList] = useState(menus)
+
+  const handleMenuClick = useCallback((id: number) => {
+    const menuListData = [...menuList]
+    menuListData.map((item) => (item.id === id ? (item.isSelected = true) : (item.isSelected = false)))
+    setMenuList(menuListData)
+  }, [])
+
   return (
     <div className='m_top'>
       <div className='m_center header_wrapper'>
@@ -9,13 +19,9 @@ const Header = () => {
           <a href='/'>网易云音乐</a>
         </div>
         <div className='m_nav'>
-          <div className='nav_menu'>
-            {menus.map((menu, i) => (
-              <a key={i} href={menu.path}>
-                {menu.name}
-              </a>
-            ))}
-          </div>
+          {menus.map((menu, i) => (
+            <MenuItem key={i} menu={menu} handleMenuClick={handleMenuClick} />
+          ))}
           <div className='nav_hot'></div>
         </div>
         <div className='header_right'>
