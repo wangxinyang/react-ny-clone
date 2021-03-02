@@ -17,30 +17,77 @@ export interface IRoute {
   routes?: IRoute[]
 }
 
+export interface ISubNavs {
+  id: number
+  path: string
+  name: string
+  isSelected?: boolean
+}
+
 const menus = [
   {
+    id: 1,
     path: '/',
     name: '发现音乐',
   },
   {
+    id: 2,
     path: '/my',
     name: '我的音乐',
   },
   {
+    id: 3,
     path: '/friend',
     name: '朋友',
   },
   {
+    id: 4,
     path: '/',
     name: '商城',
   },
   {
+    id: 5,
     path: '/',
     name: '音乐人',
   },
   {
+    id: 6,
     path: '/download',
     name: '下载客户端',
+  },
+]
+
+const subNavs = [
+  {
+    id: 1,
+    path: '/discover',
+    name: '推荐',
+    isSelected: true,
+  },
+  {
+    id: 2,
+    path: '/discover/toplist',
+    name: '排行榜',
+  },
+  {
+    id: 3,
+    path: '/discover/playlist',
+    name: '歌单',
+  },
+  {
+    id: 4,
+    path: '/discover/djradio',
+    name: '主播电台',
+  },
+  {
+    id: 5,
+    path: '/discover/artist',
+    name: '歌手',
+  },
+  {
+    id: 6,
+    path: '/discover/album',
+    name: '新碟上架',
   },
 ]
 
@@ -102,4 +149,4 @@ const routes = [
 
 export default routes
 
-export { menus, NestedRoute }
+export { menus, subNavs, NestedRoute }
