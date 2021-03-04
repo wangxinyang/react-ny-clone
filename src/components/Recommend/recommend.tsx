@@ -3,7 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom'
 import http from 'src/api/http'
 import { IRoute, NestedRoute } from 'src/router/route'
 import SubNav from '../Common/SubNav/subNav'
-import Banner from './banner'
+import Banner from './Banner/banner'
 import './recommend.scss'
 
 interface IProps {
@@ -23,6 +23,8 @@ const Recommend = ({ routes }: IProps) => {
       <SubNav />
       {/* bannerの部分 */}
       <Banner />
+      {/* コンテントの部分 */}
+
       <Switch>{routes && routes.map((route, i) => <NestedRoute key={i} {...route} />)}</Switch>
     </div>
   )

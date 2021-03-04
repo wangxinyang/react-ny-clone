@@ -1,9 +1,9 @@
 import './banner.scss'
-import { Carousel } from 'antd'
-import { useEffect, useReducer, useRef } from 'react'
-import { ActionType, IBanner, IBannerResponse, IState } from './typings'
 import http from 'src/api/http'
 import recommendReducer from 'src/reducer/recommendReducer'
+import { Carousel } from 'antd'
+import { useEffect, useReducer, useRef } from 'react'
+import { ActionType, IBanner, IBannerResponse, IState } from '../typings'
 import { AxiosResponse } from 'axios'
 import { Link } from 'react-router-dom'
 import { CarouselRef } from 'antd/lib/carousel'
@@ -46,8 +46,8 @@ const Banner = () => {
   }
 
   return (
-    <div className='banner_wrapper' onClick={handlePrev}>
-      <div className='arrow arrow_left'></div>
+    <div className='banner_wrapper'>
+      <div className='arrow arrow_left' onClick={handlePrev}></div>
       <Carousel autoplay ref={bannerRef}>
         {state.banners.map((banner) => {
           return (
