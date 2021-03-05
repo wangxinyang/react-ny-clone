@@ -6,10 +6,6 @@ export interface IBanner {
   encodeId: string
 }
 
-export interface IBannerResponse {
-  banners: IBanner[]
-}
-
 export interface IState {
   banners: IBanner[]
 }

@@ -1,9 +1,9 @@
 import './banner.scss'
 import http from 'src/api/http'
-import recommendReducer from 'src/reducer/recommendReducer'
+import recommendReducer from 'src/components/Recommend/reducer/recommendReducer'
 import { Carousel } from 'antd'
 import { useEffect, useReducer, useRef } from 'react'
-import { ActionType, IBanner, IBannerResponse, IState } from '../typings'
+import { ActionType, IBanner, IState } from '../typings'
 import { AxiosResponse } from 'axios'
 import { Link } from 'react-router-dom'
 import { CarouselRef } from 'antd/lib/carousel'
@@ -19,10 +19,8 @@ const Banner = () => {
 
   // 获取banner数据
   useEffect(() => {
-    http.post('/banner', { type: 0 }).then((res: AxiosResponse<IBannerResponse>) => {
+    http.post('/banner', { type: 0 }).then((res: AxiosResponse<IState>) => {
       const banners = res.data.banners
-      console.log(banners)
-
       if (banners) {
         dispatch({
           type: ActionType.INIT_BANNER,
