@@ -16,6 +16,8 @@
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
+    // 关闭this得警告
+    "@typescript-eslint/no-this-alias": "off",
     // 关闭any类型警告
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

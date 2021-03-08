@@ -1,13 +1,13 @@
 import http from './http'
 import { IRcommendList, IType } from './typings/recommend'
 
-type GetHotPlayListFn = () => Promise<IType>
+type GetHotPlayListFn = () => Promise<IType[]>
 type GetRecommendListFn = () => Promise<IRcommendList[]>
 
 // 获取热门歌单分类
 const getHotPlayList: GetHotPlayListFn = () => {
   return new Promise((resolve) => {
-    http.post<{ tags: IType }>('/playlist/hot').then((res) => {
+    http.post<{ tags: IType[] }>('/playlist/hot').then((res) => {
       resolve(res.data.tags)
     })
   })

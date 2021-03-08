@@ -8,7 +8,7 @@ export interface IRcommendList {
   name: string
   copywriter: string
   picUrl: string
-  playCount: number
+  playCount: number | string
   trackCount: number
   trackNumberUpdateTime: number
 }

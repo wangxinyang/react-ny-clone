@@ -1,16 +1,15 @@
+import './recommend.scss'
 import { useEffect } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
-import http from 'src/api/http'
+import { Switch } from 'react-router-dom'
 import useAsyncFn from 'src/hooks/useAsyncFn'
 import { IRoute, NestedRoute } from 'src/router/route'
 import SubNav from '../Common/SubNav/subNav'
 import Banner from './Banner/banner'
 import Ralbum from './Ralbum/ralbum'
-import './recommend.scss'
 import RplayList from './RplayList/rplaylisty'
 import RtopList from './RtopList/rtoplist'
 import recommendApis from 'src/api/recommend'
-import { IRcommendList } from 'src/api/typings/recommend'
+import { IRcommendList, IType } from 'src/api/typings/recommend'
 
 interface IProps {
   routes: IRoute[]
@@ -22,14 +21,17 @@ const Recommend = ({ routes }: IProps) => {
   //     console.log(res)
   //   })
   // }, [])
+  // 获取歌单分类
+  const [playList, getPlayListFn] = useAsyncFn(recommendApis.getHotPlayList)
   // 获取热门推荐歌单
-  const [recommendLists, getRecommendListFn] = useAsyncFn(recommendApis.getRecommendList)
+  const [recommendList, getRecommendListFn] = useAsyncFn(recommendApis.getRecommendList)
 
   useEffect(() => {
-    console.log(recommendLists)
-  }, [recommendLists])
+    console.log(recommendList)
+  }, [recommendList])
 
   useEffect(() => {
+    getPlayListFn()
     getRecommendListFn()
   }, [])
 
@@ -43,7 +45,7 @@ const Recommend = ({ routes }: IProps) => {
       <div className='content_wrapper'>
         <div className='content_left'>
           {/* 热门推荐 */}
-          <RplayList recommendLists={recommendLists.value as IRcommendList[]} />
+          <RplayList playList={playList.value as IType[]} recommendList={recommendList.value as IRcommendList[]} />
           {/* 新碟上架 */}
           <Ralbum />
           {/* 榜单 */}
