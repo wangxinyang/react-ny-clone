@@ -1,3 +1,9 @@
 const BASE_URL = ''
+// 飙升榜
+const PLAY_LIST_HOT_ID = 19723756
+// 新歌榜
+const PLAY_LIST_NEW_ID = 3779629
+// 原创榜
+const PLAY_LIST_ORIGINAL_ID = 2884035
 
-export { BASE_URL }
+export { BASE_URL, PLAY_LIST_HOT_ID, PLAY_LIST_NEW_ID, PLAY_LIST_ORIGINAL_ID }

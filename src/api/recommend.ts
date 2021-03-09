@@ -1,9 +1,10 @@
 import http from './http'
-import { IAlbum, IRcommendList, IType } from './typings/recommend'
+import { IAlbum, IPlayList, IRcommendList, IType } from './typings/recommend'
 
 type GetHotPlayListFn = () => Promise<IType[]>
 type GetRecommendListFn = () => Promise<IRcommendList[]>
 type GetTopAlbumListFn = () => Promise<IAlbum[]>
+type GetRankListFn = (id: number) => Promise<IPlayList>
 
 // 获取热门歌单分类
 const getHotPlayList: GetHotPlayListFn = () => {
@@ -32,4 +33,15 @@ const getTopAlbumList: GetTopAlbumListFn = () => {
   })
 }
 
-export default { getHotPlayList, getRecommendList, getTopAlbumList }
+// 获取榜单数据
+const getRankList: GetRankListFn = (playId: number) => {
+  return new Promise((resolve) => {
+    http
+      .post<{ playlist: IPlayList }>('/playlist/detail', { id: playId })
+      .then((res) => {
+        resolve(res.data.playlist)
+      })
+  })
+}
+
+export default { getHotPlayList, getRecommendList, getTopAlbumList, getRankList }

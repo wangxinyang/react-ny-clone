@@ -31,10 +31,10 @@ export interface IOptions<Result> {
 function useAsyncFn<Args extends any[], Result = any>(
   fn: (...args: Args) => Promise<Result>,
   options: IOptions<Result> = {
-    initialState: { loading: false },
+    initialState: { loading: true },
   },
 ): AsyncResp<Result, Args> {
-  const { initialState = { loading: false } } = options
+  const { initialState = { loading: true } } = options
   const [state, setState] = useState<AsyncState<Result>>(initialState)
 
   const callback = useCallback((...args: Args) => {

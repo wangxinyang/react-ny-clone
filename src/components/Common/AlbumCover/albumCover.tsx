@@ -1,7 +1,6 @@
 import './albumCover.scss'
 import { IAlbum } from 'src/api/typings/recommend'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 
 interface IProps {
   album: IAlbum
@@ -24,12 +23,10 @@ const AlbumCover = ({ album }: IProps) => {
         {album.artists && album.artists.length > 1 ? (
           album.artists.map((artist, index) => {
             return (
-              <>
-                <Link key={artist.id} to={`/artist?id=${artist.id}`} title={artist.name}>
-                  {artist.name}
-                </Link>
+              <Link key={artist.id} to={`/artist?id=${artist.id}`} title={artist.name}>
+                {artist.name}
                 <span> / </span>
-              </>
+              </Link>
             )
           })
         ) : (

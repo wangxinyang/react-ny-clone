@@ -9,8 +9,10 @@ import Ralbum from './Ralbum/ralbum'
 import RplayList from './RplayList/rplaylisty'
 import RtopList from './RtopList/rtoplist'
 import recommendApis from 'src/api/recommend'
-import { IAlbum, IRcommendList, IType } from 'src/api/typings/recommend'
+import { IAlbum, IPlayList, IRcommendList, IType } from 'src/api/typings/recommend'
 import http from 'src/api/http'
+import { PLAY_LIST_HOT_ID, PLAY_LIST_NEW_ID, PLAY_LIST_ORIGINAL_ID } from 'src/constants/constants'
+import Loading from '../Common/Loading/loading'
 
 interface IProps {
   routes: IRoute[]
@@ -18,7 +20,7 @@ interface IProps {
 
 const Recommend = ({ routes }: IProps) => {
   // useEffect(() => {
-  //   http.post('/album/newest').then((res) => {
+  //   http.post('/playlist/detail', { id: 19723756 }).then((res) => {
   //     console.log(res)
   //   })
   // }, [])
@@ -28,15 +30,24 @@ const Recommend = ({ routes }: IProps) => {
   const [recommendList, getRecommendListFn] = useAsyncFn(recommendApis.getRecommendList)
   // 获取新碟上架数据
   const [topAlbumList, getTopAlbumListFn] = useAsyncFn(recommendApis.getTopAlbumList)
+  // 获取飙升榜数据
+  const [hotList, getHotListFn] = useAsyncFn(recommendApis.getRankList)
+  // 获取新歌榜数据
+  const [newList, getNewListFn] = useAsyncFn(recommendApis.getRankList)
+  // 获取原创榜数据
+  const [originalList, getOriginalListFn] = useAsyncFn(recommendApis.getRankList)
 
   useEffect(() => {
-    console.log(topAlbumList)
-  }, [topAlbumList])
+    console.log(hotList.loading)
+  }, [hotList])
 
   useEffect(() => {
     getPlayListFn()
     getRecommendListFn()
     getTopAlbumListFn()
+    getHotListFn(PLAY_LIST_HOT_ID)
+    getNewListFn(PLAY_LIST_NEW_ID)
+    getOriginalListFn(PLAY_LIST_ORIGINAL_ID)
   }, [])
 
   return (
@@ -53,7 +64,15 @@ const Recommend = ({ routes }: IProps) => {
           {/* 新碟上架 */}
           <Ralbum topAlbumList={topAlbumList.value as IAlbum[]} />
           {/* 榜单 */}
-          <RtopList />
+          {hotList.loading ? (
+            <Loading />
+          ) : (
+            <RtopList
+              hotList={hotList.value as IPlayList}
+              newList={newList.value as IPlayList}
+              originalList={originalList.value as IPlayList}
+            />
+          )}
         </div>
         <div className='content_right'>
           <div className='user_profile'></div>
