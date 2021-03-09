@@ -1,8 +1,9 @@
 import http from './http'
-import { IRcommendList, IType } from './typings/recommend'
+import { IAlbum, IRcommendList, IType } from './typings/recommend'
 
 type GetHotPlayListFn = () => Promise<IType[]>
 type GetRecommendListFn = () => Promise<IRcommendList[]>
+type GetTopAlbumListFn = () => Promise<IAlbum[]>
 
 // 获取热门歌单分类
 const getHotPlayList: GetHotPlayListFn = () => {
@@ -22,4 +23,13 @@ const getRecommendList: GetRecommendListFn = () => {
   })
 }
 
-export default { getHotPlayList, getRecommendList }
+// 获取新碟上架数据
+const getTopAlbumList: GetTopAlbumListFn = () => {
+  return new Promise((resolve) => {
+    http.post<{ albums: IAlbum[] }>('/album/newest').then((res) => {
+      resolve(res.data.albums)
+    })
+  })
+}
+
+export default { getHotPlayList, getRecommendList, getTopAlbumList }

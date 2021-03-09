@@ -11,7 +11,7 @@ const RplayList = ({ playList, recommendList }: IProps) => {
   return (
     <div>
       {/* 标题头部 */}
-      <ThemeTitle title={'热门推荐'} playList={playList} />
+      <ThemeTitle title={'热门推荐'} playList={playList} moreLink={'/discover/playlist'} />
       {/* 歌单内容 */}
       <SongList recommendList={recommendList} />
     </div>

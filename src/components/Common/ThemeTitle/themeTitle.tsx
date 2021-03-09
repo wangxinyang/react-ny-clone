@@ -5,9 +5,10 @@ import './themeTitle.scss'
 interface IProps {
   title: string
   playList?: IType[]
+  moreLink?: string
 }
 
-const ThemeTitle = ({ title, playList }: IProps) => {
+const ThemeTitle = ({ title, playList, moreLink }: IProps) => {
   return (
     <div className='title_bg title_wrapper'>
       <div className='title_left'>
@@ -26,7 +27,7 @@ const ThemeTitle = ({ title, playList }: IProps) => {
         </div>
       </div>
       <div className='title_right'>
-        <Link className='more' to='/discover/playlist'>
+        <Link className='more' to={moreLink}>
           更多
         </Link>
         <div className='title_bg right_arrow'></div>

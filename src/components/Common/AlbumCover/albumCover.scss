@@ -1,0 +1,67 @@
+.album_item {
+  width: 118px;
+  height: 150px;
+  .cover_info {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 7px;
+    position: relative;
+
+    .mask {
+      background: url('/src/assets/images/coverall.png') no-repeat;
+      width: 118px;
+      height: 100px;
+      background-position: 0 -570px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .mask:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #333;
+    }
+
+    .play_icon {
+      background: url('/src/assets/images/iconall.png') no-repeat;
+      width: 22px;
+      height: 22px;
+      background-position: 0 -85px;
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+      left: 72px;
+    }
+
+    // TODO 后面来修正
+    .play_icon:hover {
+      background: url('/src/assets/images/icn_ply.png') no-repeat;
+      background-position: 0 -110px;
+    }
+  }
+
+  .album_info,
+  .artist_info {
+    width: 90%;
+    line-height: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .album_info a {
+    color: #000;
+    font-size: 12px;
+  }
+
+  .album_info a:hover,
+  .artist_info a:hover {
+    text-decoration: underline;
+  }
+
+  .artist_info a {
+    color: #666;
+    font-size: 12px;
+  }
+}

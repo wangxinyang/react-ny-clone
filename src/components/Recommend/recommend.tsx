@@ -9,7 +9,8 @@ import Ralbum from './Ralbum/ralbum'
 import RplayList from './RplayList/rplaylisty'
 import RtopList from './RtopList/rtoplist'
 import recommendApis from 'src/api/recommend'
-import { IRcommendList, IType } from 'src/api/typings/recommend'
+import { IAlbum, IRcommendList, IType } from 'src/api/typings/recommend'
+import http from 'src/api/http'
 
 interface IProps {
   routes: IRoute[]
@@ -17,7 +18,7 @@ interface IProps {
 
 const Recommend = ({ routes }: IProps) => {
   // useEffect(() => {
-  //   http.post('/personalized').then((res) => {
+  //   http.post('/album/newest').then((res) => {
   //     console.log(res)
   //   })
   // }, [])
@@ -25,14 +26,17 @@ const Recommend = ({ routes }: IProps) => {
   const [playList, getPlayListFn] = useAsyncFn(recommendApis.getHotPlayList)
   // 获取热门推荐歌单
   const [recommendList, getRecommendListFn] = useAsyncFn(recommendApis.getRecommendList)
+  // 获取新碟上架数据
+  const [topAlbumList, getTopAlbumListFn] = useAsyncFn(recommendApis.getTopAlbumList)
 
   useEffect(() => {
-    console.log(recommendList)
-  }, [recommendList])
+    console.log(topAlbumList)
+  }, [topAlbumList])
 
   useEffect(() => {
     getPlayListFn()
     getRecommendListFn()
+    getTopAlbumListFn()
   }, [])
 
   return (
@@ -47,7 +51,7 @@ const Recommend = ({ routes }: IProps) => {
           {/* 热门推荐 */}
           <RplayList playList={playList.value as IType[]} recommendList={recommendList.value as IRcommendList[]} />
           {/* 新碟上架 */}
-          <Ralbum />
+          <Ralbum topAlbumList={topAlbumList.value as IAlbum[]} />
           {/* 榜单 */}
           <RtopList />
         </div>
