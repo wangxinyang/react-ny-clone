@@ -1,4 +1,5 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
+import useMountedState from './useMountedState'
 
 export type AsyncState<T> =
   | {
@@ -36,19 +37,28 @@ function useAsyncFn<Args extends any[], Result = any>(
 ): AsyncResp<Result, Args> {
   const { initialState = { loading: true } } = options
   const [state, setState] = useState<AsyncState<Result>>(initialState)
+  const lastCallId = useRef(0)
+  // 获取mount
+  const isMounted = useMountedState()
 
   const callback = useCallback((...args: Args) => {
+    const callId = ++lastCallId.current
+
     return fn(...args).then(
       (value) => {
         const callback = args[args.length - 1]
-        if (typeof callback === 'function') {
-          callback()
+        if (isMounted() && callId === lastCallId.current) {
+          if (typeof callback === 'function') {
+            callback()
+          }
+          setState({ value, loading: false })
         }
-        setState({ value, loading: false })
         return value
       },
       (error) => {
-        setState({ error, loading: false })
+        if (isMounted && callId === lastCallId.current) {
+          setState({ error, loading: false })
+        }
         return null
       },
     )

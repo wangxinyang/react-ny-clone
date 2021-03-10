@@ -1,0 +1,129 @@
+.blk {
+  width: 230px;
+
+  .top {
+    padding: 20px 0 20px 19px;
+    display: flex;
+  }
+
+  .top_cover {
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+
+  .top_cover img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .top_cover a {
+    position: absolute;
+    background: url('/src/assets/images/coverall.png') no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: -145px -57px;
+  }
+
+  .top_title {
+    width: 116px;
+    margin: 6px 0 0 10px;
+  }
+
+  .top_icon {
+    display: flex;
+
+    .play_btn {
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      text-indent: -9999px;
+      background-position: -267px -205px;
+    }
+
+    .mark_btn {
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      text-indent: -9999px;
+      background-position: -300px -205px;
+    }
+  }
+
+  .content_item {
+    height: 319px;
+    margin-left: 10px;
+    line-height: 32px;
+
+    .rank_list {
+      height: 32px;
+      list-style: none;
+      display: flex;
+    }
+
+    .no-top {
+      display: inline-block;
+      width: 35px;
+      height: 32px;
+      margin-left: -35px;
+      text-align: center;
+      color: #666;
+      font-size: 16px;
+    }
+
+    .song_info {
+      display: inline-block;
+      width: 170px;
+      height: 32px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .opt {
+      display: none;
+      width: 82px;
+      margin-top: 7px;
+
+      .song {
+        width: 17px;
+        height: 17px;
+        margin-right: 10px;
+        background: url('/src/assets/images/index.png') no-repeat 0 9999px;
+      }
+
+      .play_song {
+        background-position: -267px -268px;
+      }
+
+      .add_song {
+        width: 17px;
+        height: 17px;
+        margin: 2px 6px 0 0;
+        background-position: 0 -700px;
+        background: url('/src/assets/images/icon1.png') no-repeat 0 9999px;
+      }
+
+      .mark_song {
+        background-position: -297px -268px;
+      }
+    }
+  }
+
+  .more {
+    height: 32px;
+    margin-right: 32px;
+    text-align: right;
+    line-height: 32px;
+  }
+}
+
+.btn {
+  background: url('/src/assets/images/index.png') no-repeat 0 9999px;
+}

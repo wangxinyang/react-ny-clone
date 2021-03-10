@@ -11,8 +11,8 @@ import RtopList from './RtopList/rtoplist'
 import recommendApis from 'src/api/recommend'
 import { IAlbum, IPlayList, IRcommendList, IType } from 'src/api/typings/recommend'
 import http from 'src/api/http'
+import qs from 'qs'
 import { PLAY_LIST_HOT_ID, PLAY_LIST_NEW_ID, PLAY_LIST_ORIGINAL_ID } from 'src/constants/constants'
-import Loading from '../Common/Loading/loading'
 
 interface IProps {
   routes: IRoute[]
@@ -20,7 +20,7 @@ interface IProps {
 
 const Recommend = ({ routes }: IProps) => {
   // useEffect(() => {
-  //   http.post('/playlist/detail', { id: 19723756 }).then((res) => {
+  //   http.post('/playlist/detail', { params: { id: 3779629 } }).then((res) => {
   //     console.log(res)
   //   })
   // }, [])
@@ -64,15 +64,7 @@ const Recommend = ({ routes }: IProps) => {
           {/* 新碟上架 */}
           <Ralbum topAlbumList={topAlbumList.value as IAlbum[]} />
           {/* 榜单 */}
-          {hotList.loading ? (
-            <Loading />
-          ) : (
-            <RtopList
-              hotList={hotList.value as IPlayList}
-              newList={newList.value as IPlayList}
-              originalList={originalList.value as IPlayList}
-            />
-          )}
+          <RtopList hotList={hotList} newList={newList} originalList={originalList} />
         </div>
         <div className='content_right'>
           <div className='user_profile'></div>

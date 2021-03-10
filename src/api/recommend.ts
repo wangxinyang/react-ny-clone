@@ -37,7 +37,7 @@ const getTopAlbumList: GetTopAlbumListFn = () => {
 const getRankList: GetRankListFn = (playId: number) => {
   return new Promise((resolve) => {
     http
-      .post<{ playlist: IPlayList }>('/playlist/detail', { id: playId })
+      .get<{ playlist: IPlayList }>('/playlist/detail', { params: { id: playId } })
       .then((res) => {
         resolve(res.data.playlist)
       })
