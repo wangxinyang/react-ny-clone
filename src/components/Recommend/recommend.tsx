@@ -1,6 +1,6 @@
 import './recommend.scss'
 import { useEffect } from 'react'
-import { Switch } from 'react-router-dom'
+import { Link, Switch } from 'react-router-dom'
 import useAsyncFn from 'src/hooks/useAsyncFn'
 import { IRoute, NestedRoute } from 'src/router/route'
 import SubNav from '../Common/SubNav/subNav'
@@ -13,6 +13,7 @@ import { IAlbum, IPlayList, IRcommendList, IType } from 'src/api/typings/recomme
 import http from 'src/api/http'
 import qs from 'qs'
 import { PLAY_LIST_HOT_ID, PLAY_LIST_NEW_ID, PLAY_LIST_ORIGINAL_ID } from 'src/constants/constants'
+import RightSideBar from './RightSideBar/rightSideBar'
 
 interface IProps {
   routes: IRoute[]
@@ -67,9 +68,14 @@ const Recommend = ({ routes }: IProps) => {
           <RtopList hotList={hotList} newList={newList} originalList={originalList} />
         </div>
         <div className='content_right'>
-          <div className='user_profile'></div>
-          <div className='singer'></div>
-          <div className='hot_dj'></div>
+          <div className='profile_bg user_profile'>
+            <p className='note'>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+            <Link to='/' className='profile_bg login-btn'>
+              用户登录
+            </Link>
+          </div>
+          <RightSideBar isSinger={true} title={'入驻歌手'} />
+          <RightSideBar isSinger={false} title={'热门主播'} />
         </div>
       </div>
       <Switch>{routes && routes.map((route, i) => <NestedRoute key={i} {...route} />)}</Switch>

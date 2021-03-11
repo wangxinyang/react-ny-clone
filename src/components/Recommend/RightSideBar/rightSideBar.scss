@@ -1,0 +1,24 @@
+.side-wrapper {
+  margin-top: 15px;
+
+  .side-title {
+    height: 23px;
+    margin: 0 20px;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+
+    span {
+      float: left;
+      font-weight: 600;
+    }
+
+    a {
+      float: right;
+      color: #666;
+    }
+  }
+
+  .side-content {
+    margin: 6px 0 14px 20px;
+  }
+}

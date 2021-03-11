@@ -5,9 +5,45 @@
   margin: 0 auto;
   border: 1px solid #d3d3d3;
   border-width: 0 1px;
-
+  display: flex;
   .content_left {
-    margin-right: 251px;
+    width: 728px;
     padding: 20px 20px 40px;
+  }
+
+  .content_right {
+    position: relative;
+    float: right;
+    width: 250px;
+
+    .profile_bg {
+      background: url('/src/assets/images/index.png') no-repeat 0 9999px;
+    }
+
+    .user_profile {
+      height: 126px;
+      padding-top: 0;
+      background-position: 0 0;
+
+      .note {
+        width: 205px;
+        margin: 0 auto;
+        padding: 16px 0;
+        line-height: 22px;
+        color: #666;
+      }
+
+      .login-btn {
+        display: block;
+        width: 100px;
+        height: 31px;
+        line-height: 31px;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 1px 0 #8a060b;
+        background-position: 0 -195px;
+        margin: 0 auto;
+      }
+    }
   }
 }
