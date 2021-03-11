@@ -49,17 +49,19 @@ const Rank = ({ rankInfo }: IProps) => {
                       <Link to={`/song?id=${track.al.id}`} title={track.name} className='song_info'>
                         {track.name}
                       </Link>
-                      <div className='opt'>
-                        <div className='song play_song'></div>
-                        <div className='add_song'></div>
-                        <div className='song mark_song'></div>
+                      <div className='opt_display'>
+                        <div className='opt'>
+                          <div className='song play_song'></div>
+                          <div className='add_song'></div>
+                          <div className='song mark_song'></div>
+                        </div>
                       </div>
                     </li>
                   )
                 })}
             </ol>
             <div className='more'>
-              <Link to={`/discover/toplist?id=${rank.id}`}>查看全部</Link>
+              <Link to={`/discover/toplist?id=${rank.id}`}>查看全部&gt;</Link>
             </div>
           </div>
         </div>

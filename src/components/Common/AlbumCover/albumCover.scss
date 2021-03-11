@@ -24,20 +24,19 @@
     }
 
     .play_icon {
-      background: url('/src/assets/images/iconall.png') no-repeat;
+      background: url('/src/assets/images/icn_ply.png') no-repeat;
+      background-position: 0 -110px;
       width: 22px;
       height: 22px;
-      background-position: 0 -85px;
       position: absolute;
       right: 10px;
       bottom: 5px;
       left: 72px;
     }
 
-    // TODO 后面来修正
     .play_icon:hover {
-      background: url('/src/assets/images/icn_ply.png') no-repeat;
-      background-position: 0 -110px;
+      background: url('/src/assets/images/iconall.png') no-repeat;
+      background-position: 0 -85px;
     }
   }
 

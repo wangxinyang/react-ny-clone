@@ -86,33 +86,53 @@
       color: #000;
     }
 
-    .opt {
+    .opt_display {
       display: none;
-      width: 82px;
-      margin-top: 7px;
+      width: 78px;
+      .opt {
+        margin-top: 7px;
+        display: flex;
 
-      .song {
-        width: 17px;
-        height: 17px;
-        margin-right: 10px;
-        background: url('/src/assets/images/index.png') no-repeat 0 9999px;
-      }
+        .song {
+          width: 17px;
+          height: 17px;
+          margin-right: 10px;
+          background: url('/src/assets/images/index.png') no-repeat 0 9999px;
+        }
 
-      .play_song {
-        background-position: -267px -268px;
-      }
+        .play_song {
+          background-position: -267px -268px;
+        }
 
-      .add_song {
-        width: 17px;
-        height: 17px;
-        margin: 2px 6px 0 0;
-        background-position: 0 -700px;
-        background: url('/src/assets/images/icon1.png') no-repeat 0 9999px;
-      }
+        .play_song:hover {
+          cursor: pointer;
+        }
 
-      .mark_song {
-        background-position: -297px -268px;
+        .add_song {
+          background: url('/src/assets/images/icon1.png') no-repeat 0 9999px;
+          width: 17px;
+          height: 17px;
+          margin: 2px 6px 0 0;
+          background-position: 0 -700px;
+        }
+
+        .add_song:hover {
+          cursor: pointer;
+        }
+
+        .mark_song {
+          background-position: -297px -268px;
+        }
+
+        .mark_song:hover {
+          cursor: pointer;
+        }
       }
+    }
+
+    .rank_list:hover .opt_display {
+      display: block;
+      width: 96px;
     }
   }
 
@@ -120,7 +140,7 @@
     height: 32px;
     margin-right: 32px;
     text-align: right;
-    line-height: 32px;
+    color: #000;
   }
 }
 
