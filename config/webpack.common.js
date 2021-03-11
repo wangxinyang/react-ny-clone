@@ -9,9 +9,12 @@ const px2rem = require('postcss-px2rem')
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
+  // TODO next time typings-for-css-modules-loaderを使用しよう
+  //'@teamsupercell/typings-for-css-modules-loader',
   {
     loader: 'css-loader',
     options: {
+      // typings-for-css-modules-loaderを理容する時trueにする
       modules: false,
       sourceMap: isDev,
       importLoaders,
@@ -87,8 +90,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          ...getCssLoaders(3),
-          '@teamsupercell/typings-for-css-modules-loader',
+          ...getCssLoaders(2),
+          // '@teamsupercell/typings-for-css-modules-loader',
           {
             loader: 'sass-loader',
             options: {
